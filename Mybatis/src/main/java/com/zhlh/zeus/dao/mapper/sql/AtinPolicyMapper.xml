@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhlh.zeus.dao.mapper.AtinPolicyMapper" >
+  <resultMap id="BaseResultMap" type="com.zhlh.zeus.dao.model.AtinPolicy" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="order_id" property="orderId" jdbcType="VARCHAR" />
+    <result column="quotation_id" property="quotationId" jdbcType="INTEGER" />
+    <result column="insu_com_price_no" property="insuComPriceNo" jdbcType="VARCHAR" />
+    <result column="insu_protocol_code" property="insuProtocolCode" jdbcType="VARCHAR" />
+    <result column="sale_protocol_code" property="saleProtocolCode" jdbcType="VARCHAR" />
+    <result column="partner_code" property="partnerCode" jdbcType="VARCHAR" />
+    <result column="channel_code" property="channelCode" jdbcType="VARCHAR" />
+    <result column="origin" property="origin" jdbcType="VARCHAR" />
+    <result column="insurer_code" property="insurerCode" jdbcType="VARCHAR" />
+    <result column="city_code" property="cityCode" jdbcType="VARCHAR" />
+    <result column="total_amount" property="totalAmount" jdbcType="INTEGER" />
+    <result column="benchmark_premium" property="benchmarkPremium" jdbcType="INTEGER" />
+    <result column="premium" property="premium" jdbcType="INTEGER" />
+    <result column="sum_discount" property="sumDiscount" jdbcType="INTEGER" />
+    <result column="discount" property="discount" jdbcType="VARCHAR" />
+    <result column="check_code" property="checkCode" jdbcType="VARCHAR" />
+    <result column="jurisdict_area" property="jurisdictArea" jdbcType="VARCHAR" />
+    <result column="argue_solution" property="argueSolution" jdbcType="VARCHAR" />
+    <result column="arbitration" property="arbitration" jdbcType="VARCHAR" />
+    <result column="insure_date" property="insureDate" jdbcType="DATE" />
+    <result column="policy_status" property="policyStatus" jdbcType="INTEGER" />
+    <result column="policy_status_msg" property="policyStatusMsg" jdbcType="VARCHAR" />
+    <result column="pay_status" property="payStatus" jdbcType="INTEGER" />
+    <result column="print_status" property="printStatus" jdbcType="INTEGER" />
+    <result column="post_status" property="postStatus" jdbcType="INTEGER" />
+    <result column="settle_status" property="settleStatus" jdbcType="INTEGER" />
+    <result column="post_no" property="postNo" jdbcType="VARCHAR" />
+    <result column="post_contact" property="postContact" jdbcType="VARCHAR" />
+    <result column="post_tel" property="postTel" jdbcType="VARCHAR" />
+    <result column="post_mobile" property="postMobile" jdbcType="VARCHAR" />
+    <result column="post_email" property="postEmail" jdbcType="VARCHAR" />
+    <result column="post_addr" property="postAddr" jdbcType="VARCHAR" />
+    <result column="post_code" property="postCode" jdbcType="VARCHAR" />
+    <result column="relation_flag" property="relationFlag" jdbcType="VARCHAR" />
+    <result column="identity_check_code" property="identityCheckCode" jdbcType="VARCHAR" />
+    <result column="tci_search_no" property="tciSearchNo" jdbcType="VARCHAR" />
+    <result column="tci_prem_search_no" property="tciPremSearchNo" jdbcType="VARCHAR" />
+    <result column="tci_preconfirm_no" property="tciPreconfirmNo" jdbcType="VARCHAR" />
+    <result column="tci_submit_no" property="tciSubmitNo" jdbcType="VARCHAR" />
+    <result column="tci_last_start_date" property="tciLastStartDate" jdbcType="VARCHAR" />
+    <result column="tci_last_end_date" property="tciLastEndDate" jdbcType="VARCHAR" />
+    <result column="tci_proposal_no" property="tciProposalNo" jdbcType="VARCHAR" />
+    <result column="tci_policy_no" property="tciPolicyNo" jdbcType="VARCHAR" />
+    <result column="tci_udwrt_flag" property="tciUdwrtFlag" jdbcType="VARCHAR" />
+    <result column="tci_udwrt_message" property="tciUdwrtMessage" jdbcType="VARCHAR" />
+    <result column="tci_sum_amount" property="tciSumAmount" jdbcType="INTEGER" />
+    <result column="tci_benchmark_premium" property="tciBenchmarkPremium" jdbcType="INTEGER" />
+    <result column="tci_premium" property="tciPremium" jdbcType="INTEGER" />
+    <result column="tci_discount_amount" property="tciDiscountAmount" jdbcType="INTEGER" />
+    <result column="tci_discount" property="tciDiscount" jdbcType="VARCHAR" />
+    <result column="tci_start_date" property="tciStartDate" jdbcType="VARCHAR" />
+    <result column="tci_end_date" property="tciEndDate" jdbcType="VARCHAR" />
+    <result column="tci_success_flag" property="tciSuccessFlag" jdbcType="VARCHAR" />
+    <result column="tci_fail_reason" property="tciFailReason" jdbcType="VARCHAR" />
+    <result column="tci_confirm_no" property="tciConfirmNo" jdbcType="VARCHAR" />
+    <result column="tci_msg_back_flag" property="tciMsgBackFlag" jdbcType="VARCHAR" />
+    <result column="tci_rccl_flag" property="tciRcclFlag" jdbcType="VARCHAR" />
+    <result column="tci_rccl_message" property="tciRcclMessage" jdbcType="VARCHAR" />
+    <result column="vci_search_no" property="vciSearchNo" jdbcType="VARCHAR" />
+    <result column="vci_prem_search_no" property="vciPremSearchNo" jdbcType="VARCHAR" />
+    <result column="vci_preconfirm_no" property="vciPreconfirmNo" jdbcType="VARCHAR" />
+    <result column="vci_submit_no" property="vciSubmitNo" jdbcType="VARCHAR" />
+    <result column="vci_proposal_no" property="vciProposalNo" jdbcType="VARCHAR" />
+    <result column="vci_policy_no" property="vciPolicyNo" jdbcType="VARCHAR" />
+    <result column="vci_udwrt_flag" property="vciUdwrtFlag" jdbcType="VARCHAR" />
+    <result column="vci_udwrt_message" property="vciUdwrtMessage" jdbcType="VARCHAR" />
+    <result column="vci_last_start_date" property="vciLastStartDate" jdbcType="VARCHAR" />
+    <result column="vci_last_end_date" property="vciLastEndDate" jdbcType="VARCHAR" />
+    <result column="vci_start_date" property="vciStartDate" jdbcType="VARCHAR" />
+    <result column="vci_end_date" property="vciEndDate" jdbcType="VARCHAR" />
+    <result column="vci_benchmark_premium" property="vciBenchmarkPremium" jdbcType="INTEGER" />
+    <result column="vci_premium" property="vciPremium" jdbcType="INTEGER" />
+    <result column="vci_discount" property="vciDiscount" jdbcType="VARCHAR" />
+    <result column="vci_discount_amount" property="vciDiscountAmount" jdbcType="INTEGER" />
+    <result column="vci_adtnl_fee" property="vciAdtnlFee" jdbcType="INTEGER" />
+    <result column="vci_success_flag" property="vciSuccessFlag" jdbcType="VARCHAR" />
+    <result column="vci_fail_reason" property="vciFailReason" jdbcType="VARCHAR" />
+    <result column="vci_confirm_no" property="vciConfirmNo" jdbcType="VARCHAR" />
+    <result column="vci_msg_back_flag" property="vciMsgBackFlag" jdbcType="VARCHAR" />
+    <result column="vci_rccl_flag" property="vciRcclFlag" jdbcType="VARCHAR" />
+    <result column="vci_rccl_message" property="vciRcclMessage" jdbcType="VARCHAR" />
+    <result column="sum_travel_tax" property="sumTravelTax" jdbcType="INTEGER" />
+    <result column="license_no" property="licenseNo" jdbcType="VARCHAR" />
+    <result column="frame_no" property="frameNo" jdbcType="VARCHAR" />
+    <result column="engine_no" property="engineNo" jdbcType="VARCHAR" />
+    <result column="actual_value" property="actualValue" jdbcType="INTEGER" />
+    <result column="purchase_price" property="purchasePrice" jdbcType="INTEGER" />
+    <result column="owner" property="owner" jdbcType="VARCHAR" />
+    <result column="owner_cert_type" property="ownerCertType" jdbcType="VARCHAR" />
+    <result column="owner_cert_no" property="ownerCertNo" jdbcType="VARCHAR" />
+    <result column="brand_name" property="brandName" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, order_id, quotation_id, insu_com_price_no, insu_protocol_code, sale_protocol_code, 
+    partner_code, channel_code, origin, insurer_code, city_code, total_amount, benchmark_premium, 
+    premium, sum_discount, discount, check_code, jurisdict_area, argue_solution, arbitration, 
+    insure_date, policy_status, policy_status_msg, pay_status, print_status, post_status, 
+    settle_status, post_no, post_contact, post_tel, post_mobile, post_email, post_addr, 
+    post_code, relation_flag, identity_check_code, tci_search_no, tci_prem_search_no, 
+    tci_preconfirm_no, tci_submit_no, tci_last_start_date, tci_last_end_date, tci_proposal_no, 
+    tci_policy_no, tci_udwrt_flag, tci_udwrt_message, tci_sum_amount, tci_benchmark_premium, 
+    tci_premium, tci_discount_amount, tci_discount, tci_start_date, tci_end_date, tci_success_flag, 
+    tci_fail_reason, tci_confirm_no, tci_msg_back_flag, tci_rccl_flag, tci_rccl_message, 
+    vci_search_no, vci_prem_search_no, vci_preconfirm_no, vci_submit_no, vci_proposal_no, 
+    vci_policy_no, vci_udwrt_flag, vci_udwrt_message, vci_last_start_date, vci_last_end_date, 
+    vci_start_date, vci_end_date, vci_benchmark_premium, vci_premium, vci_discount, vci_discount_amount, 
+    vci_adtnl_fee, vci_success_flag, vci_fail_reason, vci_confirm_no, vci_msg_back_flag, 
+    vci_rccl_flag, vci_rccl_message, sum_travel_tax, license_no, frame_no, engine_no, 
+    actual_value, purchase_price, owner, owner_cert_type, owner_cert_no, brand_name, 
+    create_time, modify_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from atin_policy
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from atin_policy
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhlh.zeus.dao.model.AtinPolicy" >
+    insert into atin_policy (id, order_id, quotation_id, 
+      insu_com_price_no, insu_protocol_code, sale_protocol_code, 
+      partner_code, channel_code, origin, 
+      insurer_code, city_code, total_amount, 
+      benchmark_premium, premium, sum_discount, 
+      discount, check_code, jurisdict_area, 
+      argue_solution, arbitration, insure_date, 
+      policy_status, policy_status_msg, pay_status, 
+      print_status, post_status, settle_status, 
+      post_no, post_contact, post_tel, 
+      post_mobile, post_email, post_addr, 
+      post_code, relation_flag, identity_check_code, 
+      tci_search_no, tci_prem_search_no, tci_preconfirm_no, 
+      tci_submit_no, tci_last_start_date, tci_last_end_date, 
+      tci_proposal_no, tci_policy_no, tci_udwrt_flag, 
+      tci_udwrt_message, tci_sum_amount, tci_benchmark_premium, 
+      tci_premium, tci_discount_amount, tci_discount, 
+      tci_start_date, tci_end_date, tci_success_flag, 
+      tci_fail_reason, tci_confirm_no, tci_msg_back_flag, 
+      tci_rccl_flag, tci_rccl_message, vci_search_no, 
+      vci_prem_search_no, vci_preconfirm_no, vci_submit_no, 
+      vci_proposal_no, vci_policy_no, vci_udwrt_flag, 
+      vci_udwrt_message, vci_last_start_date, vci_last_end_date, 
+      vci_start_date, vci_end_date, vci_benchmark_premium, 
+      vci_premium, vci_discount, vci_discount_amount, 
+      vci_adtnl_fee, vci_success_flag, vci_fail_reason, 
+      vci_confirm_no, vci_msg_back_flag, vci_rccl_flag, 
+      vci_rccl_message, sum_travel_tax, license_no, 
+      frame_no, engine_no, actual_value, 
+      purchase_price, owner, owner_cert_type, 
+      owner_cert_no, brand_name, create_time, 
+      modify_time)
+    values (#{id,jdbcType=INTEGER}, #{orderId,jdbcType=VARCHAR}, #{quotationId,jdbcType=INTEGER}, 
+      #{insuComPriceNo,jdbcType=VARCHAR}, #{insuProtocolCode,jdbcType=VARCHAR}, #{saleProtocolCode,jdbcType=VARCHAR}, 
+      #{partnerCode,jdbcType=VARCHAR}, #{channelCode,jdbcType=VARCHAR}, #{origin,jdbcType=VARCHAR}, 
+      #{insurerCode,jdbcType=VARCHAR}, #{cityCode,jdbcType=VARCHAR}, #{totalAmount,jdbcType=INTEGER}, 
+      #{benchmarkPremium,jdbcType=INTEGER}, #{premium,jdbcType=INTEGER}, #{sumDiscount,jdbcType=INTEGER}, 
+      #{discount,jdbcType=VARCHAR}, #{checkCode,jdbcType=VARCHAR}, #{jurisdictArea,jdbcType=VARCHAR}, 
+      #{argueSolution,jdbcType=VARCHAR}, #{arbitration,jdbcType=VARCHAR}, #{insureDate,jdbcType=DATE}, 
+      #{policyStatus,jdbcType=INTEGER}, #{policyStatusMsg,jdbcType=VARCHAR}, #{payStatus,jdbcType=INTEGER}, 
+      #{printStatus,jdbcType=INTEGER}, #{postStatus,jdbcType=INTEGER}, #{settleStatus,jdbcType=INTEGER}, 
+      #{postNo,jdbcType=VARCHAR}, #{postContact,jdbcType=VARCHAR}, #{postTel,jdbcType=VARCHAR}, 
+      #{postMobile,jdbcType=VARCHAR}, #{postEmail,jdbcType=VARCHAR}, #{postAddr,jdbcType=VARCHAR}, 
+      #{postCode,jdbcType=VARCHAR}, #{relationFlag,jdbcType=VARCHAR}, #{identityCheckCode,jdbcType=VARCHAR}, 
+      #{tciSearchNo,jdbcType=VARCHAR}, #{tciPremSearchNo,jdbcType=VARCHAR}, #{tciPreconfirmNo,jdbcType=VARCHAR}, 
+      #{tciSubmitNo,jdbcType=VARCHAR}, #{tciLastStartDate,jdbcType=VARCHAR}, #{tciLastEndDate,jdbcType=VARCHAR}, 
+      #{tciProposalNo,jdbcType=VARCHAR}, #{tciPolicyNo,jdbcType=VARCHAR}, #{tciUdwrtFlag,jdbcType=VARCHAR}, 
+      #{tciUdwrtMessage,jdbcType=VARCHAR}, #{tciSumAmount,jdbcType=INTEGER}, #{tciBenchmarkPremium,jdbcType=INTEGER}, 
+      #{tciPremium,jdbcType=INTEGER}, #{tciDiscountAmount,jdbcType=INTEGER}, #{tciDiscount,jdbcType=VARCHAR}, 
+      #{tciStartDate,jdbcType=VARCHAR}, #{tciEndDate,jdbcType=VARCHAR}, #{tciSuccessFlag,jdbcType=VARCHAR}, 
+      #{tciFailReason,jdbcType=VARCHAR}, #{tciConfirmNo,jdbcType=VARCHAR}, #{tciMsgBackFlag,jdbcType=VARCHAR}, 
+      #{tciRcclFlag,jdbcType=VARCHAR}, #{tciRcclMessage,jdbcType=VARCHAR}, #{vciSearchNo,jdbcType=VARCHAR}, 
+      #{vciPremSearchNo,jdbcType=VARCHAR}, #{vciPreconfirmNo,jdbcType=VARCHAR}, #{vciSubmitNo,jdbcType=VARCHAR}, 
+      #{vciProposalNo,jdbcType=VARCHAR}, #{vciPolicyNo,jdbcType=VARCHAR}, #{vciUdwrtFlag,jdbcType=VARCHAR}, 
+      #{vciUdwrtMessage,jdbcType=VARCHAR}, #{vciLastStartDate,jdbcType=VARCHAR}, #{vciLastEndDate,jdbcType=VARCHAR}, 
+      #{vciStartDate,jdbcType=VARCHAR}, #{vciEndDate,jdbcType=VARCHAR}, #{vciBenchmarkPremium,jdbcType=INTEGER}, 
+      #{vciPremium,jdbcType=INTEGER}, #{vciDiscount,jdbcType=VARCHAR}, #{vciDiscountAmount,jdbcType=INTEGER}, 
+      #{vciAdtnlFee,jdbcType=INTEGER}, #{vciSuccessFlag,jdbcType=VARCHAR}, #{vciFailReason,jdbcType=VARCHAR}, 
+      #{vciConfirmNo,jdbcType=VARCHAR}, #{vciMsgBackFlag,jdbcType=VARCHAR}, #{vciRcclFlag,jdbcType=VARCHAR}, 
+      #{vciRcclMessage,jdbcType=VARCHAR}, #{sumTravelTax,jdbcType=INTEGER}, #{licenseNo,jdbcType=VARCHAR}, 
+      #{frameNo,jdbcType=VARCHAR}, #{engineNo,jdbcType=VARCHAR}, #{actualValue,jdbcType=INTEGER}, 
+      #{purchasePrice,jdbcType=INTEGER}, #{owner,jdbcType=VARCHAR}, #{ownerCertType,jdbcType=VARCHAR}, 
+      #{ownerCertNo,jdbcType=VARCHAR}, #{brandName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhlh.zeus.dao.model.AtinPolicy" >
+    insert into atin_policy
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="quotationId != null" >
+        quotation_id,
+      </if>
+      <if test="insuComPriceNo != null" >
+        insu_com_price_no,
+      </if>
+      <if test="insuProtocolCode != null" >
+        insu_protocol_code,
+      </if>
+      <if test="saleProtocolCode != null" >
+        sale_protocol_code,
+      </if>
+      <if test="partnerCode != null" >
+        partner_code,
+      </if>
+      <if test="channelCode != null" >
+        channel_code,
+      </if>
+      <if test="origin != null" >
+        origin,
+      </if>
+      <if test="insurerCode != null" >
+        insurer_code,
+      </if>
+      <if test="cityCode != null" >
+        city_code,
+      </if>
+      <if test="totalAmount != null" >
+        total_amount,
+      </if>
+      <if test="benchmarkPremium != null" >
+        benchmark_premium,
+      </if>
+      <if test="premium != null" >
+        premium,
+      </if>
+      <if test="sumDiscount != null" >
+        sum_discount,
+      </if>
+      <if test="discount != null" >
+        discount,
+      </if>
+      <if test="checkCode != null" >
+        check_code,
+      </if>
+      <if test="jurisdictArea != null" >
+        jurisdict_area,
+      </if>
+      <if test="argueSolution != null" >
+        argue_solution,
+      </if>
+      <if test="arbitration != null" >
+        arbitration,
+      </if>
+      <if test="insureDate != null" >
+        insure_date,
+      </if>
+      <if test="policyStatus != null" >
+        policy_status,
+      </if>
+      <if test="policyStatusMsg != null" >
+        policy_status_msg,
+      </if>
+      <if test="payStatus != null" >
+        pay_status,
+      </if>
+      <if test="printStatus != null" >
+        print_status,
+      </if>
+      <if test="postStatus != null" >
+        post_status,
+      </if>
+      <if test="settleStatus != null" >
+        settle_status,
+      </if>
+      <if test="postNo != null" >
+        post_no,
+      </if>
+      <if test="postContact != null" >
+        post_contact,
+      </if>
+      <if test="postTel != null" >
+        post_tel,
+      </if>
+      <if test="postMobile != null" >
+        post_mobile,
+      </if>
+      <if test="postEmail != null" >
+        post_email,
+      </if>
+      <if test="postAddr != null" >
+        post_addr,
+      </if>
+      <if test="postCode != null" >
+        post_code,
+      </if>
+      <if test="relationFlag != null" >
+        relation_flag,
+      </if>
+      <if test="identityCheckCode != null" >
+        identity_check_code,
+      </if>
+      <if test="tciSearchNo != null" >
+        tci_search_no,
+      </if>
+      <if test="tciPremSearchNo != null" >
+        tci_prem_search_no,
+      </if>
+      <if test="tciPreconfirmNo != null" >
+        tci_preconfirm_no,
+      </if>
+      <if test="tciSubmitNo != null" >
+        tci_submit_no,
+      </if>
+      <if test="tciLastStartDate != null" >
+        tci_last_start_date,
+      </if>
+      <if test="tciLastEndDate != null" >
+        tci_last_end_date,
+      </if>
+      <if test="tciProposalNo != null" >
+        tci_proposal_no,
+      </if>
+      <if test="tciPolicyNo != null" >
+        tci_policy_no,
+      </if>
+      <if test="tciUdwrtFlag != null" >
+        tci_udwrt_flag,
+      </if>
+      <if test="tciUdwrtMessage != null" >
+        tci_udwrt_message,
+      </if>
+      <if test="tciSumAmount != null" >
+        tci_sum_amount,
+      </if>
+      <if test="tciBenchmarkPremium != null" >
+        tci_benchmark_premium,
+      </if>
+      <if test="tciPremium != null" >
+        tci_premium,
+      </if>
+      <if test="tciDiscountAmount != null" >
+        tci_discount_amount,
+      </if>
+      <if test="tciDiscount != null" >
+        tci_discount,
+      </if>
+      <if test="tciStartDate != null" >
+        tci_start_date,
+      </if>
+      <if test="tciEndDate != null" >
+        tci_end_date,
+      </if>
+      <if test="tciSuccessFlag != null" >
+        tci_success_flag,
+      </if>
+      <if test="tciFailReason != null" >
+        tci_fail_reason,
+      </if>
+      <if test="tciConfirmNo != null" >
+        tci_confirm_no,
+      </if>
+      <if test="tciMsgBackFlag != null" >
+        tci_msg_back_flag,
+      </if>
+      <if test="tciRcclFlag != null" >
+        tci_rccl_flag,
+      </if>
+      <if test="tciRcclMessage != null" >
+        tci_rccl_message,
+      </if>
+      <if test="vciSearchNo != null" >
+        vci_search_no,
+      </if>
+      <if test="vciPremSearchNo != null" >
+        vci_prem_search_no,
+      </if>
+      <if test="vciPreconfirmNo != null" >
+        vci_preconfirm_no,
+      </if>
+      <if test="vciSubmitNo != null" >
+        vci_submit_no,
+      </if>
+      <if test="vciProposalNo != null" >
+        vci_proposal_no,
+      </if>
+      <if test="vciPolicyNo != null" >
+        vci_policy_no,
+      </if>
+      <if test="vciUdwrtFlag != null" >
+        vci_udwrt_flag,
+      </if>
+      <if test="vciUdwrtMessage != null" >
+        vci_udwrt_message,
+      </if>
+      <if test="vciLastStartDate != null" >
+        vci_last_start_date,
+      </if>
+      <if test="vciLastEndDate != null" >
+        vci_last_end_date,
+      </if>
+      <if test="vciStartDate != null" >
+        vci_start_date,
+      </if>
+      <if test="vciEndDate != null" >
+        vci_end_date,
+      </if>
+      <if test="vciBenchmarkPremium != null" >
+        vci_benchmark_premium,
+      </if>
+      <if test="vciPremium != null" >
+        vci_premium,
+      </if>
+      <if test="vciDiscount != null" >
+        vci_discount,
+      </if>
+      <if test="vciDiscountAmount != null" >
+        vci_discount_amount,
+      </if>
+      <if test="vciAdtnlFee != null" >
+        vci_adtnl_fee,
+      </if>
+      <if test="vciSuccessFlag != null" >
+        vci_success_flag,
+      </if>
+      <if test="vciFailReason != null" >
+        vci_fail_reason,
+      </if>
+      <if test="vciConfirmNo != null" >
+        vci_confirm_no,
+      </if>
+      <if test="vciMsgBackFlag != null" >
+        vci_msg_back_flag,
+      </if>
+      <if test="vciRcclFlag != null" >
+        vci_rccl_flag,
+      </if>
+      <if test="vciRcclMessage != null" >
+        vci_rccl_message,
+      </if>
+      <if test="sumTravelTax != null" >
+        sum_travel_tax,
+      </if>
+      <if test="licenseNo != null" >
+        license_no,
+      </if>
+      <if test="frameNo != null" >
+        frame_no,
+      </if>
+      <if test="engineNo != null" >
+        engine_no,
+      </if>
+      <if test="actualValue != null" >
+        actual_value,
+      </if>
+      <if test="purchasePrice != null" >
+        purchase_price,
+      </if>
+      <if test="owner != null" >
+        owner,
+      </if>
+      <if test="ownerCertType != null" >
+        owner_cert_type,
+      </if>
+      <if test="ownerCertNo != null" >
+        owner_cert_no,
+      </if>
+      <if test="brandName != null" >
+        brand_name,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="quotationId != null" >
+        #{quotationId,jdbcType=INTEGER},
+      </if>
+      <if test="insuComPriceNo != null" >
+        #{insuComPriceNo,jdbcType=VARCHAR},
+      </if>
+      <if test="insuProtocolCode != null" >
+        #{insuProtocolCode,jdbcType=VARCHAR},
+      </if>
+      <if test="saleProtocolCode != null" >
+        #{saleProtocolCode,jdbcType=VARCHAR},
+      </if>
+      <if test="partnerCode != null" >
+        #{partnerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="channelCode != null" >
+        #{channelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="origin != null" >
+        #{origin,jdbcType=VARCHAR},
+      </if>
+      <if test="insurerCode != null" >
+        #{insurerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="totalAmount != null" >
+        #{totalAmount,jdbcType=INTEGER},
+      </if>
+      <if test="benchmarkPremium != null" >
+        #{benchmarkPremium,jdbcType=INTEGER},
+      </if>
+      <if test="premium != null" >
+        #{premium,jdbcType=INTEGER},
+      </if>
+      <if test="sumDiscount != null" >
+        #{sumDiscount,jdbcType=INTEGER},
+      </if>
+      <if test="discount != null" >
+        #{discount,jdbcType=VARCHAR},
+      </if>
+      <if test="checkCode != null" >
+        #{checkCode,jdbcType=VARCHAR},
+      </if>
+      <if test="jurisdictArea != null" >
+        #{jurisdictArea,jdbcType=VARCHAR},
+      </if>
+      <if test="argueSolution != null" >
+        #{argueSolution,jdbcType=VARCHAR},
+      </if>
+      <if test="arbitration != null" >
+        #{arbitration,jdbcType=VARCHAR},
+      </if>
+      <if test="insureDate != null" >
+        #{insureDate,jdbcType=DATE},
+      </if>
+      <if test="policyStatus != null" >
+        #{policyStatus,jdbcType=INTEGER},
+      </if>
+      <if test="policyStatusMsg != null" >
+        #{policyStatusMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="payStatus != null" >
+        #{payStatus,jdbcType=INTEGER},
+      </if>
+      <if test="printStatus != null" >
+        #{printStatus,jdbcType=INTEGER},
+      </if>
+      <if test="postStatus != null" >
+        #{postStatus,jdbcType=INTEGER},
+      </if>
+      <if test="settleStatus != null" >
+        #{settleStatus,jdbcType=INTEGER},
+      </if>
+      <if test="postNo != null" >
+        #{postNo,jdbcType=VARCHAR},
+      </if>
+      <if test="postContact != null" >
+        #{postContact,jdbcType=VARCHAR},
+      </if>
+      <if test="postTel != null" >
+        #{postTel,jdbcType=VARCHAR},
+      </if>
+      <if test="postMobile != null" >
+        #{postMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="postEmail != null" >
+        #{postEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="postAddr != null" >
+        #{postAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="postCode != null" >
+        #{postCode,jdbcType=VARCHAR},
+      </if>
+      <if test="relationFlag != null" >
+        #{relationFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCheckCode != null" >
+        #{identityCheckCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tciSearchNo != null" >
+        #{tciSearchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciPremSearchNo != null" >
+        #{tciPremSearchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciPreconfirmNo != null" >
+        #{tciPreconfirmNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciSubmitNo != null" >
+        #{tciSubmitNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciLastStartDate != null" >
+        #{tciLastStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="tciLastEndDate != null" >
+        #{tciLastEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="tciProposalNo != null" >
+        #{tciProposalNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciPolicyNo != null" >
+        #{tciPolicyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciUdwrtFlag != null" >
+        #{tciUdwrtFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="tciUdwrtMessage != null" >
+        #{tciUdwrtMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="tciSumAmount != null" >
+        #{tciSumAmount,jdbcType=INTEGER},
+      </if>
+      <if test="tciBenchmarkPremium != null" >
+        #{tciBenchmarkPremium,jdbcType=INTEGER},
+      </if>
+      <if test="tciPremium != null" >
+        #{tciPremium,jdbcType=INTEGER},
+      </if>
+      <if test="tciDiscountAmount != null" >
+        #{tciDiscountAmount,jdbcType=INTEGER},
+      </if>
+      <if test="tciDiscount != null" >
+        #{tciDiscount,jdbcType=VARCHAR},
+      </if>
+      <if test="tciStartDate != null" >
+        #{tciStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="tciEndDate != null" >
+        #{tciEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="tciSuccessFlag != null" >
+        #{tciSuccessFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="tciFailReason != null" >
+        #{tciFailReason,jdbcType=VARCHAR},
+      </if>
+      <if test="tciConfirmNo != null" >
+        #{tciConfirmNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciMsgBackFlag != null" >
+        #{tciMsgBackFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="tciRcclFlag != null" >
+        #{tciRcclFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="tciRcclMessage != null" >
+        #{tciRcclMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="vciSearchNo != null" >
+        #{vciSearchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciPremSearchNo != null" >
+        #{vciPremSearchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciPreconfirmNo != null" >
+        #{vciPreconfirmNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciSubmitNo != null" >
+        #{vciSubmitNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciProposalNo != null" >
+        #{vciProposalNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciPolicyNo != null" >
+        #{vciPolicyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciUdwrtFlag != null" >
+        #{vciUdwrtFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="vciUdwrtMessage != null" >
+        #{vciUdwrtMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="vciLastStartDate != null" >
+        #{vciLastStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="vciLastEndDate != null" >
+        #{vciLastEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="vciStartDate != null" >
+        #{vciStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="vciEndDate != null" >
+        #{vciEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="vciBenchmarkPremium != null" >
+        #{vciBenchmarkPremium,jdbcType=INTEGER},
+      </if>
+      <if test="vciPremium != null" >
+        #{vciPremium,jdbcType=INTEGER},
+      </if>
+      <if test="vciDiscount != null" >
+        #{vciDiscount,jdbcType=VARCHAR},
+      </if>
+      <if test="vciDiscountAmount != null" >
+        #{vciDiscountAmount,jdbcType=INTEGER},
+      </if>
+      <if test="vciAdtnlFee != null" >
+        #{vciAdtnlFee,jdbcType=INTEGER},
+      </if>
+      <if test="vciSuccessFlag != null" >
+        #{vciSuccessFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="vciFailReason != null" >
+        #{vciFailReason,jdbcType=VARCHAR},
+      </if>
+      <if test="vciConfirmNo != null" >
+        #{vciConfirmNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciMsgBackFlag != null" >
+        #{vciMsgBackFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="vciRcclFlag != null" >
+        #{vciRcclFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="vciRcclMessage != null" >
+        #{vciRcclMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="sumTravelTax != null" >
+        #{sumTravelTax,jdbcType=INTEGER},
+      </if>
+      <if test="licenseNo != null" >
+        #{licenseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="frameNo != null" >
+        #{frameNo,jdbcType=VARCHAR},
+      </if>
+      <if test="engineNo != null" >
+        #{engineNo,jdbcType=VARCHAR},
+      </if>
+      <if test="actualValue != null" >
+        #{actualValue,jdbcType=INTEGER},
+      </if>
+      <if test="purchasePrice != null" >
+        #{purchasePrice,jdbcType=INTEGER},
+      </if>
+      <if test="owner != null" >
+        #{owner,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerCertType != null" >
+        #{ownerCertType,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerCertNo != null" >
+        #{ownerCertNo,jdbcType=VARCHAR},
+      </if>
+      <if test="brandName != null" >
+        #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhlh.zeus.dao.model.AtinPolicy" >
+    update atin_policy
+    <set >
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="quotationId != null" >
+        quotation_id = #{quotationId,jdbcType=INTEGER},
+      </if>
+      <if test="insuComPriceNo != null" >
+        insu_com_price_no = #{insuComPriceNo,jdbcType=VARCHAR},
+      </if>
+      <if test="insuProtocolCode != null" >
+        insu_protocol_code = #{insuProtocolCode,jdbcType=VARCHAR},
+      </if>
+      <if test="saleProtocolCode != null" >
+        sale_protocol_code = #{saleProtocolCode,jdbcType=VARCHAR},
+      </if>
+      <if test="partnerCode != null" >
+        partner_code = #{partnerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="channelCode != null" >
+        channel_code = #{channelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="origin != null" >
+        origin = #{origin,jdbcType=VARCHAR},
+      </if>
+      <if test="insurerCode != null" >
+        insurer_code = #{insurerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        city_code = #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="totalAmount != null" >
+        total_amount = #{totalAmount,jdbcType=INTEGER},
+      </if>
+      <if test="benchmarkPremium != null" >
+        benchmark_premium = #{benchmarkPremium,jdbcType=INTEGER},
+      </if>
+      <if test="premium != null" >
+        premium = #{premium,jdbcType=INTEGER},
+      </if>
+      <if test="sumDiscount != null" >
+        sum_discount = #{sumDiscount,jdbcType=INTEGER},
+      </if>
+      <if test="discount != null" >
+        discount = #{discount,jdbcType=VARCHAR},
+      </if>
+      <if test="checkCode != null" >
+        check_code = #{checkCode,jdbcType=VARCHAR},
+      </if>
+      <if test="jurisdictArea != null" >
+        jurisdict_area = #{jurisdictArea,jdbcType=VARCHAR},
+      </if>
+      <if test="argueSolution != null" >
+        argue_solution = #{argueSolution,jdbcType=VARCHAR},
+      </if>
+      <if test="arbitration != null" >
+        arbitration = #{arbitration,jdbcType=VARCHAR},
+      </if>
+      <if test="insureDate != null" >
+        insure_date = #{insureDate,jdbcType=DATE},
+      </if>
+      <if test="policyStatus != null" >
+        policy_status = #{policyStatus,jdbcType=INTEGER},
+      </if>
+      <if test="policyStatusMsg != null" >
+        policy_status_msg = #{policyStatusMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="payStatus != null" >
+        pay_status = #{payStatus,jdbcType=INTEGER},
+      </if>
+      <if test="printStatus != null" >
+        print_status = #{printStatus,jdbcType=INTEGER},
+      </if>
+      <if test="postStatus != null" >
+        post_status = #{postStatus,jdbcType=INTEGER},
+      </if>
+      <if test="settleStatus != null" >
+        settle_status = #{settleStatus,jdbcType=INTEGER},
+      </if>
+      <if test="postNo != null" >
+        post_no = #{postNo,jdbcType=VARCHAR},
+      </if>
+      <if test="postContact != null" >
+        post_contact = #{postContact,jdbcType=VARCHAR},
+      </if>
+      <if test="postTel != null" >
+        post_tel = #{postTel,jdbcType=VARCHAR},
+      </if>
+      <if test="postMobile != null" >
+        post_mobile = #{postMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="postEmail != null" >
+        post_email = #{postEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="postAddr != null" >
+        post_addr = #{postAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="postCode != null" >
+        post_code = #{postCode,jdbcType=VARCHAR},
+      </if>
+      <if test="relationFlag != null" >
+        relation_flag = #{relationFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCheckCode != null" >
+        identity_check_code = #{identityCheckCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tciSearchNo != null" >
+        tci_search_no = #{tciSearchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciPremSearchNo != null" >
+        tci_prem_search_no = #{tciPremSearchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciPreconfirmNo != null" >
+        tci_preconfirm_no = #{tciPreconfirmNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciSubmitNo != null" >
+        tci_submit_no = #{tciSubmitNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciLastStartDate != null" >
+        tci_last_start_date = #{tciLastStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="tciLastEndDate != null" >
+        tci_last_end_date = #{tciLastEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="tciProposalNo != null" >
+        tci_proposal_no = #{tciProposalNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciPolicyNo != null" >
+        tci_policy_no = #{tciPolicyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciUdwrtFlag != null" >
+        tci_udwrt_flag = #{tciUdwrtFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="tciUdwrtMessage != null" >
+        tci_udwrt_message = #{tciUdwrtMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="tciSumAmount != null" >
+        tci_sum_amount = #{tciSumAmount,jdbcType=INTEGER},
+      </if>
+      <if test="tciBenchmarkPremium != null" >
+        tci_benchmark_premium = #{tciBenchmarkPremium,jdbcType=INTEGER},
+      </if>
+      <if test="tciPremium != null" >
+        tci_premium = #{tciPremium,jdbcType=INTEGER},
+      </if>
+      <if test="tciDiscountAmount != null" >
+        tci_discount_amount = #{tciDiscountAmount,jdbcType=INTEGER},
+      </if>
+      <if test="tciDiscount != null" >
+        tci_discount = #{tciDiscount,jdbcType=VARCHAR},
+      </if>
+      <if test="tciStartDate != null" >
+        tci_start_date = #{tciStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="tciEndDate != null" >
+        tci_end_date = #{tciEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="tciSuccessFlag != null" >
+        tci_success_flag = #{tciSuccessFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="tciFailReason != null" >
+        tci_fail_reason = #{tciFailReason,jdbcType=VARCHAR},
+      </if>
+      <if test="tciConfirmNo != null" >
+        tci_confirm_no = #{tciConfirmNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tciMsgBackFlag != null" >
+        tci_msg_back_flag = #{tciMsgBackFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="tciRcclFlag != null" >
+        tci_rccl_flag = #{tciRcclFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="tciRcclMessage != null" >
+        tci_rccl_message = #{tciRcclMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="vciSearchNo != null" >
+        vci_search_no = #{vciSearchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciPremSearchNo != null" >
+        vci_prem_search_no = #{vciPremSearchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciPreconfirmNo != null" >
+        vci_preconfirm_no = #{vciPreconfirmNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciSubmitNo != null" >
+        vci_submit_no = #{vciSubmitNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciProposalNo != null" >
+        vci_proposal_no = #{vciProposalNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciPolicyNo != null" >
+        vci_policy_no = #{vciPolicyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciUdwrtFlag != null" >
+        vci_udwrt_flag = #{vciUdwrtFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="vciUdwrtMessage != null" >
+        vci_udwrt_message = #{vciUdwrtMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="vciLastStartDate != null" >
+        vci_last_start_date = #{vciLastStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="vciLastEndDate != null" >
+        vci_last_end_date = #{vciLastEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="vciStartDate != null" >
+        vci_start_date = #{vciStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="vciEndDate != null" >
+        vci_end_date = #{vciEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="vciBenchmarkPremium != null" >
+        vci_benchmark_premium = #{vciBenchmarkPremium,jdbcType=INTEGER},
+      </if>
+      <if test="vciPremium != null" >
+        vci_premium = #{vciPremium,jdbcType=INTEGER},
+      </if>
+      <if test="vciDiscount != null" >
+        vci_discount = #{vciDiscount,jdbcType=VARCHAR},
+      </if>
+      <if test="vciDiscountAmount != null" >
+        vci_discount_amount = #{vciDiscountAmount,jdbcType=INTEGER},
+      </if>
+      <if test="vciAdtnlFee != null" >
+        vci_adtnl_fee = #{vciAdtnlFee,jdbcType=INTEGER},
+      </if>
+      <if test="vciSuccessFlag != null" >
+        vci_success_flag = #{vciSuccessFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="vciFailReason != null" >
+        vci_fail_reason = #{vciFailReason,jdbcType=VARCHAR},
+      </if>
+      <if test="vciConfirmNo != null" >
+        vci_confirm_no = #{vciConfirmNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vciMsgBackFlag != null" >
+        vci_msg_back_flag = #{vciMsgBackFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="vciRcclFlag != null" >
+        vci_rccl_flag = #{vciRcclFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="vciRcclMessage != null" >
+        vci_rccl_message = #{vciRcclMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="sumTravelTax != null" >
+        sum_travel_tax = #{sumTravelTax,jdbcType=INTEGER},
+      </if>
+      <if test="licenseNo != null" >
+        license_no = #{licenseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="frameNo != null" >
+        frame_no = #{frameNo,jdbcType=VARCHAR},
+      </if>
+      <if test="engineNo != null" >
+        engine_no = #{engineNo,jdbcType=VARCHAR},
+      </if>
+      <if test="actualValue != null" >
+        actual_value = #{actualValue,jdbcType=INTEGER},
+      </if>
+      <if test="purchasePrice != null" >
+        purchase_price = #{purchasePrice,jdbcType=INTEGER},
+      </if>
+      <if test="owner != null" >
+        owner = #{owner,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerCertType != null" >
+        owner_cert_type = #{ownerCertType,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerCertNo != null" >
+        owner_cert_no = #{ownerCertNo,jdbcType=VARCHAR},
+      </if>
+      <if test="brandName != null" >
+        brand_name = #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhlh.zeus.dao.model.AtinPolicy" >
+    update atin_policy
+    set order_id = #{orderId,jdbcType=VARCHAR},
+      quotation_id = #{quotationId,jdbcType=INTEGER},
+      insu_com_price_no = #{insuComPriceNo,jdbcType=VARCHAR},
+      insu_protocol_code = #{insuProtocolCode,jdbcType=VARCHAR},
+      sale_protocol_code = #{saleProtocolCode,jdbcType=VARCHAR},
+      partner_code = #{partnerCode,jdbcType=VARCHAR},
+      channel_code = #{channelCode,jdbcType=VARCHAR},
+      origin = #{origin,jdbcType=VARCHAR},
+      insurer_code = #{insurerCode,jdbcType=VARCHAR},
+      city_code = #{cityCode,jdbcType=VARCHAR},
+      total_amount = #{totalAmount,jdbcType=INTEGER},
+      benchmark_premium = #{benchmarkPremium,jdbcType=INTEGER},
+      premium = #{premium,jdbcType=INTEGER},
+      sum_discount = #{sumDiscount,jdbcType=INTEGER},
+      discount = #{discount,jdbcType=VARCHAR},
+      check_code = #{checkCode,jdbcType=VARCHAR},
+      jurisdict_area = #{jurisdictArea,jdbcType=VARCHAR},
+      argue_solution = #{argueSolution,jdbcType=VARCHAR},
+      arbitration = #{arbitration,jdbcType=VARCHAR},
+      insure_date = #{insureDate,jdbcType=DATE},
+      policy_status = #{policyStatus,jdbcType=INTEGER},
+      policy_status_msg = #{policyStatusMsg,jdbcType=VARCHAR},
+      pay_status = #{payStatus,jdbcType=INTEGER},
+      print_status = #{printStatus,jdbcType=INTEGER},
+      post_status = #{postStatus,jdbcType=INTEGER},
+      settle_status = #{settleStatus,jdbcType=INTEGER},
+      post_no = #{postNo,jdbcType=VARCHAR},
+      post_contact = #{postContact,jdbcType=VARCHAR},
+      post_tel = #{postTel,jdbcType=VARCHAR},
+      post_mobile = #{postMobile,jdbcType=VARCHAR},
+      post_email = #{postEmail,jdbcType=VARCHAR},
+      post_addr = #{postAddr,jdbcType=VARCHAR},
+      post_code = #{postCode,jdbcType=VARCHAR},
+      relation_flag = #{relationFlag,jdbcType=VARCHAR},
+      identity_check_code = #{identityCheckCode,jdbcType=VARCHAR},
+      tci_search_no = #{tciSearchNo,jdbcType=VARCHAR},
+      tci_prem_search_no = #{tciPremSearchNo,jdbcType=VARCHAR},
+      tci_preconfirm_no = #{tciPreconfirmNo,jdbcType=VARCHAR},
+      tci_submit_no = #{tciSubmitNo,jdbcType=VARCHAR},
+      tci_last_start_date = #{tciLastStartDate,jdbcType=VARCHAR},
+      tci_last_end_date = #{tciLastEndDate,jdbcType=VARCHAR},
+      tci_proposal_no = #{tciProposalNo,jdbcType=VARCHAR},
+      tci_policy_no = #{tciPolicyNo,jdbcType=VARCHAR},
+      tci_udwrt_flag = #{tciUdwrtFlag,jdbcType=VARCHAR},
+      tci_udwrt_message = #{tciUdwrtMessage,jdbcType=VARCHAR},
+      tci_sum_amount = #{tciSumAmount,jdbcType=INTEGER},
+      tci_benchmark_premium = #{tciBenchmarkPremium,jdbcType=INTEGER},
+      tci_premium = #{tciPremium,jdbcType=INTEGER},
+      tci_discount_amount = #{tciDiscountAmount,jdbcType=INTEGER},
+      tci_discount = #{tciDiscount,jdbcType=VARCHAR},
+      tci_start_date = #{tciStartDate,jdbcType=VARCHAR},
+      tci_end_date = #{tciEndDate,jdbcType=VARCHAR},
+      tci_success_flag = #{tciSuccessFlag,jdbcType=VARCHAR},
+      tci_fail_reason = #{tciFailReason,jdbcType=VARCHAR},
+      tci_confirm_no = #{tciConfirmNo,jdbcType=VARCHAR},
+      tci_msg_back_flag = #{tciMsgBackFlag,jdbcType=VARCHAR},
+      tci_rccl_flag = #{tciRcclFlag,jdbcType=VARCHAR},
+      tci_rccl_message = #{tciRcclMessage,jdbcType=VARCHAR},
+      vci_search_no = #{vciSearchNo,jdbcType=VARCHAR},
+      vci_prem_search_no = #{vciPremSearchNo,jdbcType=VARCHAR},
+      vci_preconfirm_no = #{vciPreconfirmNo,jdbcType=VARCHAR},
+      vci_submit_no = #{vciSubmitNo,jdbcType=VARCHAR},
+      vci_proposal_no = #{vciProposalNo,jdbcType=VARCHAR},
+      vci_policy_no = #{vciPolicyNo,jdbcType=VARCHAR},
+      vci_udwrt_flag = #{vciUdwrtFlag,jdbcType=VARCHAR},
+      vci_udwrt_message = #{vciUdwrtMessage,jdbcType=VARCHAR},
+      vci_last_start_date = #{vciLastStartDate,jdbcType=VARCHAR},
+      vci_last_end_date = #{vciLastEndDate,jdbcType=VARCHAR},
+      vci_start_date = #{vciStartDate,jdbcType=VARCHAR},
+      vci_end_date = #{vciEndDate,jdbcType=VARCHAR},
+      vci_benchmark_premium = #{vciBenchmarkPremium,jdbcType=INTEGER},
+      vci_premium = #{vciPremium,jdbcType=INTEGER},
+      vci_discount = #{vciDiscount,jdbcType=VARCHAR},
+      vci_discount_amount = #{vciDiscountAmount,jdbcType=INTEGER},
+      vci_adtnl_fee = #{vciAdtnlFee,jdbcType=INTEGER},
+      vci_success_flag = #{vciSuccessFlag,jdbcType=VARCHAR},
+      vci_fail_reason = #{vciFailReason,jdbcType=VARCHAR},
+      vci_confirm_no = #{vciConfirmNo,jdbcType=VARCHAR},
+      vci_msg_back_flag = #{vciMsgBackFlag,jdbcType=VARCHAR},
+      vci_rccl_flag = #{vciRcclFlag,jdbcType=VARCHAR},
+      vci_rccl_message = #{vciRcclMessage,jdbcType=VARCHAR},
+      sum_travel_tax = #{sumTravelTax,jdbcType=INTEGER},
+      license_no = #{licenseNo,jdbcType=VARCHAR},
+      frame_no = #{frameNo,jdbcType=VARCHAR},
+      engine_no = #{engineNo,jdbcType=VARCHAR},
+      actual_value = #{actualValue,jdbcType=INTEGER},
+      purchase_price = #{purchasePrice,jdbcType=INTEGER},
+      owner = #{owner,jdbcType=VARCHAR},
+      owner_cert_type = #{ownerCertType,jdbcType=VARCHAR},
+      owner_cert_no = #{ownerCertNo,jdbcType=VARCHAR},
+      brand_name = #{brandName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByOrderId" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List"/>
+    from atin_policy
+    where order_id = #{orderId}
+  </select>
+</mapper>
