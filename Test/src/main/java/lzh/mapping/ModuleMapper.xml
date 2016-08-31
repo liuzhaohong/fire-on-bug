@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="lzh.dao.ModuleMapper" >
+  <resultMap id="BaseResultMap" type="lzh.model.Module" >
+    <id column="moduleId" property="moduleid" jdbcType="INTEGER" />
+    <result column="moduleName" property="modulename" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    moduleId, moduleName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from module
+    where moduleId = #{moduleid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from module
+    where moduleId = #{moduleid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="lzh.model.Module" >
+    insert into module (moduleId, moduleName)
+    values (#{moduleid,jdbcType=INTEGER}, #{modulename,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="lzh.model.Module" >
+    insert into module
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="moduleid != null" >
+        moduleId,
+      </if>
+      <if test="modulename != null" >
+        moduleName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="moduleid != null" >
+        #{moduleid,jdbcType=INTEGER},
+      </if>
+      <if test="modulename != null" >
+        #{modulename,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="lzh.model.Module" >
+    update module
+    <set >
+      <if test="modulename != null" >
+        moduleName = #{modulename,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where moduleId = #{moduleid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="lzh.model.Module" >
+    update module
+    set moduleName = #{modulename,jdbcType=VARCHAR}
+    where moduleId = #{moduleid,jdbcType=INTEGER}
+  </update>
+</mapper>

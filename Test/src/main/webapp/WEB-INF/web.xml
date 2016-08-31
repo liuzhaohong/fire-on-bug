@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>  
+<web-app> 
+	<display-name>Archetype Created Web Application</display-name>
+	<servlet>
+<servlet-name>hello</servlet-name>
+<servlet-class>com.caucho.hessian.server.HessianServlet</servlet-class>
+<init-param>
+<param-name>home-class</param-name>
+<param-value>hessian.sercers.HelloImpl</param-value>
+</init-param>
+<init-param>
+<param-name>home-api</param-name>
+<param-value>hessian.sercers.Hello</param-value>
+</init-param>
+</servlet>           
+         <servlet-mapping>
+<servlet-name>hello</servlet-name>
+             <url-pattern>/client/HessianService</url-pattern>     
+                     </servlet-mapping> 
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+	
+</web-app>

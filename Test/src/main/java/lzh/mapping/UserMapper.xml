@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="lzh.dao.UserMapper">
+	<resultMap id="BaseResultMap" type="lzh.model.User">
+		<id column="userId" property="userid" jdbcType="INTEGER" />
+		<result column="userName" property="username" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		userId, userName, password
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from users
+		where userId = #{userid,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from users
+		where userId = #{userid,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="lzh.model.User">
+		insert into users (userId,
+		userName, password
+		)
+		values (#{userid,jdbcType=INTEGER},
+		#{username,jdbcType=VARCHAR},
+		#{password,jdbcType=VARCHAR}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="lzh.model.User">
+		insert into users
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="userid != null">
+				userId,
+			</if>
+			<if test="username != null">
+				userName,
+			</if>
+			<if test="password != null">
+				password,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="userid != null">
+				#{userid,jdbcType=INTEGER},
+			</if>
+			<if test="username != null">
+				#{username,jdbcType=VARCHAR},
+			</if>
+			<if test="password != null">
+				#{password,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="lzh.model.User">
+		update users
+		<set>
+			<if test="username != null">
+				userName = #{username,jdbcType=VARCHAR},
+			</if>
+			<if test="password != null">
+				password = #{password,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where userId = #{userid,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="lzh.model.User">
+		update users
+		set
+		userName = #{username,jdbcType=VARCHAR},
+		password =
+		#{password,jdbcType=VARCHAR}
+		where userId = #{userid,jdbcType=INTEGER}
+	</update>
+	<select id="getAll" resultMap="userResultMap">
+		select userId, userName, password
+		from users
+	</select>
+	<resultMap type="lzh.model.User" id="userResultMap" extends="BaseResultMap">
+		<collection property="userRoles" column="userId" javaType="list"
+			select="selectUserRole"></collection>
+	</resultMap>
+	<select id="selectUserRole" parameterType="java.lang.Integer"
+		resultType="lzh.model.UserRole">
+		select
+		user_role.urId,
+		user_role.roleId,
+		user_role.userId
+		from
+		user_role
+		where user_role.userId=#{userId,jdbcType=INTEGER}
+	</select>
+	<resultMap type="lzh.model.User" id="userResultMap2" extends="BaseResultMap">
+		<collection property="userRoles" javaType="list"
+			ofType="lzh.model.UserRole">
+			<id property="urid" column="ur_id" />
+			<result property="roleid" column="role_id" />
+			<result property="userid" column="user_id" />
+			<association property="role" javaType="lzh.model.Role">
+				<id property="roleid" column="role_id" />
+				<result property="rolename" column="role_name" />
+			</association>
+		</collection>
+	</resultMap>
+	<select id="getAll2" resultMap="userResultMap2">
+		SELECT
+		users.userId,
+		users.userName,
+		users.`password`,
+		user_role.urId ur_id,
+		user_role.roleId
+		role_id,
+		user_role.userId user_id,
+		role.roleName role_name,
+		role.roleId
+		role_id
+		FROM
+		user_role
+		JOIN users ON users.userId = user_role.userId
+		JOIN
+		role ON user_role.roleId = role.roleId
+	</select>
+	<resultMap type="lzh.model.User" id="userResultMap3" extends="BaseResultMap">
+		<collection property="roles" javaType="list" ofType="lzh.model.Role">
+			<id property="roleid" column="role_id" />
+			<result property="rolename" column="role_name" />
+		</collection>
+	</resultMap>
+	<select id="getAll3" resultMap="userResultMap3">
+		SELECT
+		users.userId,
+		users.userName,
+		users.`password`,
+		user_role.urId,
+		user_role.roleId,
+		user_role.userId,
+		role.roleName role_name,
+		role.roleId role_id
+		FROM
+		user_role
+		JOIN users ON users.userId = user_role.userId
+		JOIN role ON
+		user_role.roleId = role.roleId
+	</select>
+	<select id="selectUser"  resultMap="BaseResultMap" parameterType="lzh.model.User">
+		SELECT
+		*
+		FROM
+		users
+		WHERE
+		userName = #{username, jdbcType=VARCHAR}
+		AND
+		password = #{password, jdbcType=VARCHAR}
+	</select>
+		<select id="userLoginByMap"  resultMap="BaseResultMap" >
+		SELECT
+		*
+		FROM
+		users
+		WHERE
+		userName = #{username, jdbcType=VARCHAR}
+		AND
+		password = #{password, jdbcType=VARCHAR}
+	</select>
+</mapper>
